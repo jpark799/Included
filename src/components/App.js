@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import './App.css';
-import googleGender from './components/GoogleGender'
-import Test from './components/Test'
-import Form from './components/Form'
+import '../App.css';
+import googleGender from './GoogleGender'
+import Test from './Test'
+import Form from './Form'
+import RaceChart from './Dashboard/RaceChart';
 
 class App extends Component {
   onSubmit = fields => {
@@ -13,7 +14,9 @@ class App extends Component {
     return (
       <div className="App">
         <Form onSubmit={fields => this.onSubmit(fields)}/>
+        <RaceChart/>
       </div>
+
     );
   }
 }
