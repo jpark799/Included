@@ -39,7 +39,7 @@ const options = {
     },
     {
         name: 'Your Company',
-        data: arr
+        data: []
     }]
 }
 
