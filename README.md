@@ -1,6 +1,6 @@
 A project that makes the data-driven argument for more diverse hiring practices.
 
-
+---
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
