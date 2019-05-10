@@ -2,12 +2,13 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
 
-let companyRace = []
 class Form extends Component {
-  constructor () {
-    super();
+  constructor (props) {
+    super(props);
   
     this.state = {
+      renderFormStatus: true,
+      renderGraphButton: false, 
       whiteM: '',
       whiteF: '',
       blackM: '',
@@ -17,7 +18,10 @@ class Form extends Component {
       hispanicLatinM: '',
       hispanicLatinF: '',
       // Need to pass companyRace into Dashboard component
-      companyRace: companyRace
+      companyRace: [],
+      // companyM: ['Male', 0, ],
+      // companyF: ''
+
   }}
 
   change = (e) => {
@@ -28,13 +32,28 @@ class Form extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
+    this.state.renderFormStatus = false;
+    this.state.renderGraphButton = true;
     // this.props.onSubmit(this.state);
     console.log(this.state);
+    // calculate race totals
     let whiteTotal = parseInt(this.state.whiteM) + parseInt(this.state.whiteF)
     let blackTotal = parseInt(this.state.blackM)+parseInt(this.state.blackF)
     let asianTotal = parseInt(this.state.asianM)+parseInt(this.state.asianF)
     let hispanicLatinTotal = parseInt(this.state.hispanicLatinM)+parseInt(this.state.hispanicLatinF)
-    companyRace.push(whiteTotal, blackTotal, asianTotal, hispanicLatinTotal)
+
+    // TODO: calculate gender totals
+
+    //copy state
+    const stateCopy = {...this.state};
+    // mutate stateCopy
+    stateCopy.companyRace.push(whiteTotal, blackTotal, asianTotal, hispanicLatinTotal);
+    stateCopy.companyGender.push() //TODO: Complete push totals
+    // update component (Form) state
+    this.setState(stateCopy);
+    // update App state
+    this.props.setSeries(this.state.companyRace);
+    this.props.setPieData(this.state.companyGender);
   }
   
   render() {

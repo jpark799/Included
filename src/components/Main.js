@@ -7,7 +7,7 @@ import Dashboard from './Dashboard/Dashboard'
 const Main = () => (
   <main>
     <Switch>
-      <Route exact path='/' component={Form}/>
+      <Route exact path='/' component={Form }/>
       <Route path='/Dashboard' component={Dashboard}/>
     </Switch>
   </main>
