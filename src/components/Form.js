@@ -35,25 +35,35 @@ class Form extends Component {
     this.state.renderFormStatus = false;
     this.state.renderGraphButton = true;
     // this.props.onSubmit(this.state);
-    console.log(this.state);
+    // console.log(this.state);
+
+    // If user does not enter value, 
+
     // calculate race totals
-    let whiteTotal = parseInt(this.state.whiteM) + parseInt(this.state.whiteF)
+    let companyTotal = parseInt(this.state.whiteM)+parseInt(this.state.whiteF)+parseInt(this.state.blackM)+parseInt(this.state.blackF)+parseInt(this.state.asianM)+parseInt(this.state.asianF)+parseInt(this.state.hispanicLatinM)+parseInt(this.state.hispanicLatinF)
+    let whiteTotal = parseInt(this.state.whiteM)+parseInt(this.state.whiteF)
     let blackTotal = parseInt(this.state.blackM)+parseInt(this.state.blackF)
     let asianTotal = parseInt(this.state.asianM)+parseInt(this.state.asianF)
     let hispanicLatinTotal = parseInt(this.state.hispanicLatinM)+parseInt(this.state.hispanicLatinF)
 
     // TODO: calculate gender totals
-
+    console.log('this is the company Total ', companyTotal)
     //copy state
     const stateCopy = {...this.state};
     // mutate stateCopy
-    stateCopy.companyRace.push(whiteTotal, blackTotal, asianTotal, hispanicLatinTotal);
-    stateCopy.companyGender.push() //TODO: Complete push totals
+    stateCopy.companyRace.push(
+    (Math.floor(whiteTotal/companyTotal*10000)/100), 
+    (Math.floor(blackTotal/companyTotal*10000)/100), 
+    (Math.floor(asianTotal/companyTotal*10000)/100), 
+    (Math.floor(hispanicLatinTotal/companyTotal*10000)/100));
+    // stateCopy.companyGender.push() //TODO: Complete push totals
     // update component (Form) state
     this.setState(stateCopy);
     // update App state
     this.props.setSeries(this.state.companyRace);
-    this.props.setPieData(this.state.companyGender);
+    // this.props.setPieData(this.state.companyGender);
+    console.log("this.props", this.props)
+    this.props.routeProps.history.push("/dash")
   }
   
   render() {
@@ -75,7 +85,7 @@ class Form extends Component {
         <input name="hispanicLatinM" placeholder= "Male" value={this.state.hispanicLatinM} onChange={e => this.change(e)} />
         <input name="hispanicLatinF" placeholder= "Female" value={this.state.hispanicLatinF} onChange={e => this.change(e)} />
         <br/><br/>
-        <button onClick={e => this.onSubmit(e)}><link to ='/Dashboard'></link>Submit</button>
+        <button onClick={e => this.onSubmit(e)}>Submit</button> 
       </form>
       // <div>          <navbar companyRace = {this.state.companyRace} />
       // </div>

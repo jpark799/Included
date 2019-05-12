@@ -4,6 +4,7 @@ import googleGender from './GoogleGender'
 import Test from './Test'
 import Form from './Form'
 import Dashboard from './Dashboard/Dashboard';
+import {BrowserRouter, Switch, Route} from 'react-router-dom'
 
 
 // const Main = () => (
@@ -27,8 +28,7 @@ class App extends Component {
     super(props);
     
     this.state = {
-      renderFormStatus: true,
-      renderGraphButton: false,  
+ 
       series: [{
         name: 'US Workforce',
         data: [78,12.3,6.3,17.3]
@@ -46,7 +46,7 @@ class App extends Component {
     pieData: []
   }
 }
-
+// should be in Dashboard?? 
   setSeries = formData => {
     //copy state
     const stateCopy = {...this.state};
@@ -86,13 +86,18 @@ class App extends Component {
 
   render() {  
     return (
-      <div className="App">
+      // <div className="App">
       
-      {this.state.renderFormStatus ? <Form setSeries={this.setSeries} setPieData={this.setPieData} /> : ''}
-      {this.state.renderGraphButton ? <Dashboard series={this.state.series} /> : ''}
-        {/* <PieChart data={this.state.pieData} /> */}
-      </div>
-
+      // <Form setSeries={this.setSeries} setPieData={this.setPieData} />
+      // <Dashboard series={this.state.series} />
+      //   {/* <PieChart data={this.state.pieData} /> */}
+      // </div>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" render={routeProps => <Form setSeries={this.setSeries} routeProps={routeProps} />} />
+          <Route path="/dash" render={() => <Dashboard series={this.state.series} />} />
+        </Switch>
+      </BrowserRouter>
     );
   }
 }
