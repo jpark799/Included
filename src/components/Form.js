@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { type } from 'os';
 
 
 class Form extends Component {
@@ -7,8 +8,6 @@ class Form extends Component {
     super(props);
   
     this.state = {
-      renderFormStatus: true,
-      renderGraphButton: false, 
       whiteM: '',
       whiteF: '',
       blackM: '',
@@ -17,6 +16,8 @@ class Form extends Component {
       asianF: '',
       hispanicLatinM: '',
       hispanicLatinF: '',
+      totalM: '',
+      totalF: '',
       // Need to pass companyRace into Dashboard component
       companyRace: [],
       // companyM: ['Male', 0, ],
@@ -31,40 +32,70 @@ class Form extends Component {
   };
 
   onSubmit = (e) => {
+    // Error handling for entries less than 0 
     e.preventDefault();
-    this.state.renderFormStatus = false;
-    this.state.renderGraphButton = true;
-    // this.props.onSubmit(this.state);
-    // console.log(this.state);
 
-    // If user does not enter value, 
+    if (this.state.whiteM < 0 || this.state.whiteF < 0 ||
+    this.state.blackM < 0 || this.state.blackF < 0 ||
+    this.state.asianM < 0 || this.state.asianF < 0 || 
+    this.state.hispanicLatinM < 0 || this.state.hispanicLatinF < 0)
+    { alert('Please enter numbers greater than 0')} else if (
+    // Error handling for entries that are not numbers as well as empty entries
+    parseInt(this.state.whiteM) * parseInt(this.state.whiteF) * parseInt(this.state.blackM) * parseInt(this.state.blackF) * 
+    parseInt(this.state.asianM) * parseInt(this.state.asianF) * parseInt(this.state.hispanicLatinM) * parseInt(this.state.hispanicLatinF) * 0 !== 0 
+    
+    // typeof(this.state.whiteM) !== 'number' || typeof(this.state.whiteF) !== 'number' ||
+      // typeof(this.state.blackM) !== 'number' || typeof(this.state.blackF) !== 'number' ||
+      // typeof(this.state.asianM) !== 'number' || typeof(this.state.asianF) !== 'number' ||
+      // typeof(this.state.hispanicLatinM) !== 'number' || typeof(this.state.hispanicLatinF) !== 'number'
 
-    // calculate race totals
-    let companyTotal = parseInt(this.state.whiteM)+parseInt(this.state.whiteF)+parseInt(this.state.blackM)+parseInt(this.state.blackF)+parseInt(this.state.asianM)+parseInt(this.state.asianF)+parseInt(this.state.hispanicLatinM)+parseInt(this.state.hispanicLatinF)
-    let whiteTotal = parseInt(this.state.whiteM)+parseInt(this.state.whiteF)
-    let blackTotal = parseInt(this.state.blackM)+parseInt(this.state.blackF)
-    let asianTotal = parseInt(this.state.asianM)+parseInt(this.state.asianF)
-    let hispanicLatinTotal = parseInt(this.state.hispanicLatinM)+parseInt(this.state.hispanicLatinF)
+    ) { alert('Please enter numbers for all entries')} else {
 
-    // TODO: calculate gender totals
-    console.log('this is the company Total ', companyTotal)
-    //copy state
-    const stateCopy = {...this.state};
-    // mutate stateCopy
-    stateCopy.companyRace.push(
-    (Math.floor(whiteTotal/companyTotal*10000)/100), 
-    (Math.floor(blackTotal/companyTotal*10000)/100), 
-    (Math.floor(asianTotal/companyTotal*10000)/100), 
-    (Math.floor(hispanicLatinTotal/companyTotal*10000)/100));
-    // stateCopy.companyGender.push() //TODO: Complete push totals
-    // update component (Form) state
-    this.setState(stateCopy);
-    // update App state
-    this.props.setSeries(this.state.companyRace);
-    // this.props.setPieData(this.state.companyGender);
-    console.log("this.props", this.props)
-    this.props.routeProps.history.push("/dash")
+    
+      // || this.state.whiteF === '' ||
+      // this.state.blackM === '' || this.state.blackF === '' ||
+      // this.state.asianM === '' || this.state.asianF === '' ||
+      // this.state.hispanicLatinM === '' || this.state.hispanicLatinF === ''
+      // }
+      // this.props.onSubmit(this.state);
+      // console.log(this.state);
+
+
+      // this.state.whiteM === '' || this.state.whiteF === '' ||
+      // this.state.blackM === '' || this.state.blackF === '' ||
+      // this.state.asianM === '' || this.state.asianF === '' ||
+      // this.state.hispanicLatinM === '' || this.state.hispanicLatinF === ''
+
+      // calculate race totals
+      let companyTotal = parseInt(this.state.whiteM)+parseInt(this.state.whiteF)+parseInt(this.state.blackM)+parseInt(this.state.blackF)+parseInt(this.state.asianM)+parseInt(this.state.asianF)+parseInt(this.state.hispanicLatinM)+parseInt(this.state.hispanicLatinF)
+      let whiteTotal = parseInt(this.state.whiteM)+parseInt(this.state.whiteF)
+      let blackTotal = parseInt(this.state.blackM)+parseInt(this.state.blackF)
+      let asianTotal = parseInt(this.state.asianM)+parseInt(this.state.asianF)
+      let hispanicLatinTotal = parseInt(this.state.hispanicLatinM)+parseInt(this.state.hispanicLatinF)
+
+      // TODO: calculate gender totals
+      console.log('this is the company Total ', companyTotal)
+      console.log('this is the state ', this.state.whiteF)
+      console.log('this is the type of state', typeof(this.state.whiteF))
+      //copy state
+      const stateCopy = {...this.state};
+      // mutate stateCopy
+      stateCopy.companyRace.push(
+      (Math.floor(whiteTotal/companyTotal*10000)/100), 
+      (Math.floor(blackTotal/companyTotal*10000)/100), 
+      (Math.floor(asianTotal/companyTotal*10000)/100), 
+      (Math.floor(hispanicLatinTotal/companyTotal*10000)/100));
+      // stateCopy.companyGender.push() //TODO: Complete push totals
+      // update component (Form) state
+      this.setState(stateCopy);
+      // update App state
+      this.props.setSeries(this.state.companyRace);
+      // this.props.setPieData(this.state.companyGender);
+      console.log("this.props", this.props)
+      this.props.routeProps.history.push("/dash")
+    }
   }
+  
   
   render() {
     return (
