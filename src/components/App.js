@@ -47,23 +47,14 @@ class App extends Component {
   }
 }
 // should be in Dashboard?? 
-  setSeries = formData => {
+  setSeries = companyRaceData => {
     //copy state
     const stateCopy = {...this.state};
     // mutate stateCopy
 
-    // // TODO:  Will need to find way to calculate percents
-    // const arrayTotal = stateCopy.series[2].data;
-    // const CompanyTotal = (parseInt(arrayTotal[0]));
-    // const whitePercent = 0
-    // const blackPercent = 0
-    // const asianPercent = 0
-    // const hispanicLatinPercent = 0
-    // console.log('this is the company total ', CompanyTotal)
-    // console.log('this is the company array stateCopy.series[2].data ', stateCopy.series[2].data)
+    console.log('This is race data', companyRaceData)
 
-
-    stateCopy.series[2].data.push(...formData);
+    stateCopy.series[2].data = (companyRaceData);
     // update app state
 
 
@@ -71,7 +62,19 @@ class App extends Component {
   }
 
   // define method to pass to Form to update App pieData
-  setPieData = formData => {}
+  setPieData = companyGenderData => {
+      //copy state
+      const stateCopy = {...this.state};
+      // mutate stateCopy
+  
+      console.log('This is gender data', companyGenderData)
+  
+  
+      // update app state
+  
+      stateCopy.pieData = companyGenderData;
+      this.setState(stateCopy);
+  }
 
   // onSubmit = fields => {
   //   console.log("App Component received: ", fields);
@@ -94,8 +97,8 @@ class App extends Component {
       // </div>
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" render={routeProps => <Form setSeries={this.setSeries} routeProps={routeProps} />} />
-          <Route path="/dash" render={() => <Dashboard series={this.state.series} />} />
+          <Route exact path="/" render={routeProps => <Form setSeries={this.setSeries} setPieData={this.setPieData} routeProps={routeProps} />} />
+          <Route path="/dash" render={() => <Dashboard series={this.state.series} pieData={this.state.pieData} />} />
         </Switch>
       </BrowserRouter>
     );
