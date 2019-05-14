@@ -489,15 +489,21 @@ class App extends Component {
                 }}
               >
                 <h1>The Numbers Don't Lie</h1> <br />
+                <br/>
+                A diversity of informed views enables objections and <br />
+                alternatives to be explored more efficiently. <br />
+                Solutions are able to emerge more readily <br />
+                and are adopted with greater confidence. <br /> 
                 <br />
-                According to the consulting group, Mckinsey.... <br />
                 Companies that were in the top quartile for gender <br />
                 diversity were 15% more likely to have financial returns <br />
-                that were above their national industry medians. <br /> <br />
-                Companies that were in the top quartile for racial <br />
-                diversity were 35% more likely to have financial returns <br />
-                that were above their national industry medians.
+                that were above their national industry medians and <br /> 
+                companies that were in the top quartile for racial <br />
+                diversity were 35% more likely. <br/> 
+                <i>Source: Diversity Matters (2015) - Mckinsey & Company</i><br/>
+
               </div>
+
             </Parallax.Layer>
 
             <Parallax.Layer
@@ -523,16 +529,19 @@ class App extends Component {
                   color: "white"
                 }}
               >
-                <h1>Better Decision Making & Innovation</h1> <br />
+                <h1>Increased Representation = Innovation</h1> <br />
                 <br />
-                A diversity of informed views enables objections and <br />
-                alternatives to be explored more efficiently. <br />
-                Solutions are able to emerge more readily <br />
-                and are adopted with greater confidence. <br /> <br />
-                According to Scott E. Page, a professor of economics at <br />
-                the University of Michigan, the presence of women <br />
-                and minorities on leadership teams is strongly correlated <br />
-                with stronger financial performance
+                Roughly half of the US Workforce is female <br />
+                while over 80% of US software engineers are male.  <br /> <br />
+                As technology continues to play an increasingly integral <br />
+                role in our daily lives, it's more important <br />
+                than ever to work towards increased representation <br />
+                in the tech industry because as a society, we could <br/>
+                be missing out on a lot of great ideas and innovation. <br/>
+
+
+                
+
               </div>
               {/* <HighchartsReact highcharts={Highcharts} options={pieOptionsUsGender} /> */}
 
@@ -563,14 +572,15 @@ class App extends Component {
               >
                 <h1>Transparent Data Powers Progress</h1> <br />
                 <br />
-                Less than 20% of Fortune 500 companies <br />
-                publish annual diversity reports <br />
-                while 78% of the US work force list Diversity  <br />
-                & Inclusion as important to them. <br /> <br />
                 Data serves as an important catalyst <br />
                 for change and progress while also providing <br />
                 greater insight into hiring, progression, <br />
-                and retention within organizations.
+                and retention within organizations. <br/> <br/>
+                Less than 20% of Fortune 500 companies <br />
+                publish annual diversity reports <br />
+                while 78% of the US work force list Diversity  <br />
+                & Inclusion as extremely important. <br /> <br />
+
               </div>
             </Parallax.Layer>
 

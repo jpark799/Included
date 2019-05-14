@@ -140,6 +140,7 @@ class Form extends Component {
       }}
     >
       <form   >
+        <br/>
         Would You Like To Participate? <br/>
         Please Enter Your Company's Demographics <br/> <br/>
         
@@ -211,6 +212,7 @@ class Form extends Component {
         />
         <br />
         <br/>
+        {/* <div>Load Google's <br/>Numbers </div> */}
         <button onClick={e => this.onSubmit(e)}>Submit</button>
       </form>
       </div>
