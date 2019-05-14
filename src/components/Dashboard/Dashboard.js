@@ -11,8 +11,11 @@ class Dashboard extends Component {
 
   render() {
     const optionsRace = {
+      chart: {
+        backgroundColor: '#87BCDE'},
+      height: '50%',
       title: {
-        text: "Race Data"
+        text: "Racial Demographics"
       },
       subtitle: {
         text: "Source: US Burea of Labor"
@@ -39,12 +42,15 @@ class Dashboard extends Component {
 
     const pieOptionsUsGender = {
       chart: {
-        type: "pie"
+        backgroundColor: '#87BCDE',
+
+        type: "pie",
       },
+      opacity: 0.1,
       title: {
         text: "Overall US Labor Force"
       },
-
+      backgroundColor: "#87BCDE" ,
       subtitle: {
         text: "Source: US Burea of Labor"
       },
@@ -75,6 +81,8 @@ class Dashboard extends Component {
 
     const pieOptionsUsSoftwareGender = {
         chart: {
+          backgroundColor: '#87BCDE',
+
           type: "pie"
         },
         title: {
@@ -110,6 +118,7 @@ class Dashboard extends Component {
       };
     const yourCompanyGender = {
         chart: {
+          backgroundColor: '#87BCDE',
           type: "pie"
         },
         title: {
@@ -145,11 +154,28 @@ class Dashboard extends Component {
       console.log('This is companydata race series ', yourCompanyGender.series.data)
 
     return (
-      <div>
+      <div
+    style={{ backgroundColor: "#87BCDE" }}
+>
+
         <HighchartsReact highcharts={Highcharts} options={optionsRace} />
-        <HighchartsReact highcharts={Highcharts} options={pieOptionsUsGender} />
-        <HighchartsReact highcharts={Highcharts} options={pieOptionsUsSoftwareGender} />
-        <HighchartsReact highcharts={Highcharts} options={yourCompanyGender} />
+        <div style={{backgroundColor: "#transparent", opacity: 100, height: '100px', width: '33%',
+          float: 'left'}}> 
+        <HighchartsReact highcharts={Highcharts} options={pieOptionsUsGender} />         </div>
+        <div style={{ float: 'left'}}> 
+
+        <HighchartsReact highcharts={Highcharts} options={pieOptionsUsSoftwareGender} /></div>
+        <div style={{ float: 'left'}}> 
+        <HighchartsReact highcharts={Highcharts} options={yourCompanyGender} />  </div>      <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/> 
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
       </div>
     );
   }

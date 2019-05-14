@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { type } from "os";
+import Highcharts from "highcharts";
+import HighchartsReact from "highcharts-react-official";
 
 class Form extends Component {
   constructor(props) {
@@ -117,20 +119,40 @@ class Form extends Component {
       this.props.setPieData(this.state.companyGender);
       console.log("this.props", this.props);
       this.props.routeProps.history.push("/dash");
+      
     }
   };
 
   render() {
     return (
-      <form>
+      <div
+      style={{
+        whiteSpace: "pre",
+        fontFamily: "Menlo-Regular, Menlo, monospace",
+        fontSize: 27,
+        alignContent: 'center',
+        lineHeight: "38px",
+        color: "black",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center"
+
+      }}
+    >
+      <form   >
+        Would You Like To Participate? <br/>
+        Please Enter Your Company's Demographics <br/> <br/>
+        
         White <br />
         <input
+          size= '8'
           name="whiteM"
           placeholder="Male"
           value={this.state.whiteM}
           onChange={e => this.change(e)}
         />
         <input
+          size= '8'
           name="whiteF"
           placeholder="Female"
           value={this.state.whiteF}
@@ -140,12 +162,14 @@ class Form extends Component {
         <br />
         Black <br />
         <input
+          size= '8'
           name="blackM"
           placeholder="Male"
           value={this.state.blackM}
           onChange={e => this.change(e)}
         />
         <input
+          size= '8'
           name="blackF"
           placeholder="Female"
           value={this.state.blackF}
@@ -155,13 +179,15 @@ class Form extends Component {
         <br />
         Asian <br />
         <input
+          size= '8'
           name="asianM"
           placeholder="Male"
           value={this.state.asianM}
           onChange={e => this.change(e)}
         />
         <input
-          name="asianF"
+           size= '8'
+           name="asianF"
           placeholder="Female"
           value={this.state.asianF}
           onChange={e => this.change(e)}
@@ -170,21 +196,24 @@ class Form extends Component {
         <br />
         Hispanic/Latin <br />
         <input
-          name="hispanicLatinM"
+            size= '8'
+            name="hispanicLatinM"
           placeholder="Male"
           value={this.state.hispanicLatinM}
           onChange={e => this.change(e)}
         />
         <input
-          name="hispanicLatinF"
+              size= '8'
+              name="hispanicLatinF"
           placeholder="Female"
           value={this.state.hispanicLatinF}
           onChange={e => this.change(e)}
         />
         <br />
-        <br />
+        <br/>
         <button onClick={e => this.onSubmit(e)}>Submit</button>
       </form>
+      </div>
       // <div>          <navbar companyRace = {this.state.companyRace} />
       // </div>
     );
