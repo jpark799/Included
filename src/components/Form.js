@@ -31,6 +31,9 @@ class Form extends Component {
     });
   };
 
+
+
+
   onSubmit = e => {
     // Error handling for entries less than 0
     e.preventDefault();
@@ -146,6 +149,7 @@ class Form extends Component {
         
         White <br />
         <input
+          id = 'whiteM'
           size= '8'
           name="whiteM"
           placeholder="Male"
@@ -214,6 +218,9 @@ class Form extends Component {
         <br/>
         {/* <div>Load Google's <br/>Numbers </div> */}
         <button onClick={e => this.onSubmit(e)}>Submit</button>
+        {/* <button onclick={e => this.setGoogleValue(e)}>
+                Load Google's Engineering Team Numbers</button> */}
+
       </form>
       </div>
       // <div>          <navbar companyRace = {this.state.companyRace} />

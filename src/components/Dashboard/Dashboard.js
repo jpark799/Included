@@ -126,7 +126,6 @@ class Dashboard extends Component {
         },
   
         subtitle: {
-          text: "Source: US Burea of Labor"
         },
         legend: {
           layout: "vertical",
@@ -169,7 +168,10 @@ class Dashboard extends Component {
         <HighchartsReact highcharts={Highcharts} options={yourCompanyGender} />  </div>      <br/>
         <br/>
         <br/>
-        <br/>
+        <div style={{ float: 'left',}}> 
+        <form method="get" action="/">
+    <button style={{  width: '80px', height: '40px'}}  type="submit">Reset</button>
+</form>        <br/> </div>
         <br/> 
         <br/>
         <br/>

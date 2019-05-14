@@ -448,7 +448,7 @@ class App extends Component {
                   color: "white"
                 }}
               >
-                <h1>Inclusive</h1> <br />
+                <h1>Included</h1> <br />
                 Because Diversity & Inclusion <br />
                 Are More Than Just Buzzwords
                 <br />
@@ -500,7 +500,7 @@ class App extends Component {
                 that were above their national industry medians and <br /> 
                 companies that were in the top quartile for racial <br />
                 diversity were 35% more likely. <br/> 
-                <i>Source: Diversity Matters (2015) - Mckinsey & Company</i><br/>
+                <i>Source: Diversity Matters (2015) - McKinsey & Company</i><br/>
 
               </div>
 
@@ -529,16 +529,18 @@ class App extends Component {
                   color: "white"
                 }}
               >
-                <h1>Increased Representation = Innovation</h1> <br />
+                <h1>Diversity Drives Innovation</h1> <br />
                 <br />
-                Roughly half of the US Workforce is female <br />
+                Roughly half of the world's population is female <br />
                 while over 80% of US software engineers are male.  <br /> <br />
                 As technology continues to play an increasingly integral <br />
                 role in our daily lives, it's more important <br />
                 than ever to work towards increased representation <br />
-                in the tech industry because as a society, we could <br/>
-                be missing out on a lot of great ideas and innovation. <br/>
-
+                so as an industry, we can develop technologies that <br/>
+                accurately represent the needs of society. <br/> <br/>
+                Imagine all of the great ideas and innovations we <br/>
+                could be missing out on because of a lack of  <br/>
+                representation
 
                 
 
@@ -618,6 +620,7 @@ class App extends Component {
                 series={this.state.series}
                 pieData={this.state.pieData}
               />
+              
             )}
           />
             </Parallax.Layer>
