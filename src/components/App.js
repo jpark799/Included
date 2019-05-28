@@ -413,7 +413,7 @@ class App extends Component {
                 pointerEvents: "none"
               }}
             >
-              <img src={url("earth")} style={{ width: "15%" }} />
+              <img src={url("earth")} style={{ width: "10%" }} />
             </Parallax.Layer>
 
    
@@ -539,7 +539,7 @@ class App extends Component {
                 industry reflect the demopgrahics of <br/>
                 society so that they can accurately build for<br/>
                 the needs of society. <br/> <br/>
-                
+
                 Imagine all of the great ideas and innovations we <br/>
                 could be missing out on because of a lack of  <br/>
                 representation
