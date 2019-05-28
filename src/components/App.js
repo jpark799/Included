@@ -532,11 +532,14 @@ class App extends Component {
                 <br />
                 Roughly half of the world's population is female <br />
                 while over 80% of US software engineers are male.  <br /> <br />
-                As technology continues to play an increasingly integral <br />
-                role in our daily lives, it's more important <br />
-                than ever to work towards increased representation <br />
-                so as an industry, we can develop technologies that <br/>
-                accurately represent the needs of society. <br/> <br/>
+
+                As technology continues to play an increasingly <br/>
+                integral role in our daily lives, it's more important <br/>
+                than ever to ensure that the demographics of our <br/> 
+                industry reflect the demopgrahics of <br/>
+                society so that they can accurately build for<br/>
+                the needs of society. <br/> <br/>
+                
                 Imagine all of the great ideas and innovations we <br/>
                 could be missing out on because of a lack of  <br/>
                 representation

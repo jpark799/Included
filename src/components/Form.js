@@ -99,9 +99,9 @@ class Form extends Component {
       // Company Gender With Whole Numbers
       let companyM = Math.floor(companyMaleFraction * 10000) / 100
       let companyF = Math.floor(companyFemaleFraction * 10000) / 100
-      console.log("this is the company Total ", companyTotal);
-      console.log("this is the state ", this.state.whiteF);
-      console.log("this is the type of state", typeof this.state.whiteF);
+      // console.log("this is the company Total ", companyTotal);
+      // console.log("this is the state ", this.state.whiteF);
+      // console.log("this is the type of state", typeof this.state.whiteF);
       //copy state
       const stateCopy = { ...this.state };
       // mutate stateCopy
@@ -120,7 +120,7 @@ class Form extends Component {
       this.props.setSeries(this.state.companyRace);
       // this.props.setGender(this.state.companyGender)
       this.props.setPieData(this.state.companyGender);
-      console.log("this.props", this.props);
+      // console.log("this.props", this.props);
       this.props.routeProps.history.push("/dash");
       
     }

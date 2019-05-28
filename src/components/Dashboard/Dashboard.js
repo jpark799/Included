@@ -149,8 +149,8 @@ class Dashboard extends Component {
           }
         ]
       };
-      console.log('This is pieData props in Dash ',this.props.pieData)
-      console.log('This is companydata race series ', yourCompanyGender.series.data)
+      // console.log('This is pieData props in Dash ',this.props.pieData)
+      // console.log('This is companydata race series ', yourCompanyGender.series.data)
 
     return (
       <div
