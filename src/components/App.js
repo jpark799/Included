@@ -534,15 +534,15 @@ class App extends Component {
                 while over 80% of US software engineers are male.  <br /> <br />
 
                 As technology continues to play an increasingly <br/>
-                integral role in our daily lives, it's more important <br/>
-                than ever to ensure that the demographics of our <br/> 
-                industry reflect the demopgrahics of <br/>
+                integral role in our daily lives, it's more  <br/>
+                important than ever to ensure that the demographics <br/> 
+                of the tech industry reflect the demographics of <br/>
                 society so that they can accurately build for<br/>
                 the needs of society. <br/> <br/>
 
                 Imagine all of the great ideas and innovations we <br/>
                 could be missing out on because of a lack of  <br/>
-                representation
+                representation.
 
                 
 
