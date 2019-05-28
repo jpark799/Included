@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "../App.css";
-import googleGender from "./GoogleGender";
 import Test from "./Test";
 import Form from "./Form";
 import Dashboard from "./Dashboard/Dashboard";
