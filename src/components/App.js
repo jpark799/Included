@@ -73,12 +73,6 @@ class App extends Component {
       pieData: []
     };
   }
-  // should be in Dashboard??
-
- 
-
-
-
 
   setSeries = companyRaceData => {
     //copy state
@@ -119,7 +113,6 @@ class App extends Component {
 
   render() {
     
-// START
     const optionsRace = {
       title: {
         text: "Race Data"
@@ -252,15 +245,8 @@ class App extends Component {
         ]
       };
 
-      // FIN
-
-
-
-
-
     return (
       
-
       <BrowserRouter>
         <Switch>
           <Parallax
@@ -290,12 +276,6 @@ class App extends Component {
               style={{ backgroundColor: "#87BCDE" }}
               
             />
-
-            {/* <Parallax.Layer
-              offset={5}
-              speed={1}
-              style={{ backgroundColor: "#87BCDE" }}
-            /> */}
 
             <Parallax.Layer
               offset={0}
