@@ -15,7 +15,7 @@ I made this project because Diversity & Inclusion are much more than just buzzwo
 
 I would like to take a second to also address that there is much more to diversity and inclusion than just racial and gender diversity. The data provided by the US Bureau of Labor could also be much more inclusive(including mixed races, Native Americans, etc.) but I chose to go with this data set because it was credible and represented the US as a whole.
 
-This project was created as my capstone project for Project Shift. Please check them out if you are interested in learning to code! 
+This project was created as my capstone project for [Project Shift](https://www.projectshift.io/). Please check them out if you are interested in learning to code! 
 
 
 ### How to Run App
